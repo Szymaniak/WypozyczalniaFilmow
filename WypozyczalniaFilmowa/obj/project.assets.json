@@ -5797,20 +5797,30 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\szyma\\.nuget\\packages\\": {}
+    "C:\\Users\\109\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VS2019\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa.csproj",
+      "projectUniqueName": "C:\\Users\\109\\Source\\Repos\\WypozyczalniaFilmow3\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa.csproj",
       "projectName": "WypozyczalniaFilmowa",
-      "projectPath": "D:\\VS2019\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa.csproj",
-      "packagesPath": "C:\\Users\\szyma\\.nuget\\packages\\",
-      "outputPath": "D:\\VS2019\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa\\obj\\",
+      "projectPath": "C:\\Users\\109\\Source\\Repos\\WypozyczalniaFilmow3\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa.csproj",
+      "packagesPath": "C:\\Users\\109\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\109\\Source\\Repos\\WypozyczalniaFilmow3\\WypozyczalniaFilmowa\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\szyma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\109\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5868,7 +5878,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

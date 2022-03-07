@@ -5,22 +5,36 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using WypozyczalniaFilmowa.DAL;
 using WypozyczalniaFilmowa.Models;
 
 namespace WypozyczalniaFilmowa.Controllers
 {
     public class HomeController : Controller
     {
+        FilmyContext db;
+
+        
+
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, FilmyContext db)
         {
             _logger = logger;
+            this.db = db;
         }
 
+        public IActionResult StronyStatyczne(string nazwa)
+        {
+
+
+            return View(nazwa);
+        }
         public IActionResult Index()
         {
-            return View();
+            var kategorie = db.Kategorie.ToList();
+
+            return View(kategorie);
         }
 
         public IActionResult Privacy()
