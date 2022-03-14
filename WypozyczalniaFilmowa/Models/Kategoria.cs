@@ -10,7 +10,7 @@ namespace WypozyczalniaFilmowa.Models
         public int Id { get; set; }
         public string Nazwa { get; set; }
         public string Opis { get; set; }
-        public ICollection<Film> Film { get; set; }
+        public ICollection<Film> Filmy { get; set; }
         
         
     }

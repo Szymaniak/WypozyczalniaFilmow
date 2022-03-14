@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5p7v/5wtLGBSchmuMILmDagydw6wnIkEQmvuw/l+PIvG6EWkt4XZ7cDwLHC1gJvbOFkLtkhznO2ycDHp5zs2LA==",
+  "dgSpecHash": "9Uai8P6CEdC+a30DQnjIgj7aI6BuJjzrYpGjDUA6STdkB3VopjbQ1lv79t//UqTJW6Bmqo5jfro64y/FoNfe4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\109\\Source\\Repos\\WypozyczalniaFilmow3\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa.csproj",
+  "projectFilePath": "C:\\Users\\109\\Source\\Repos\\WypozyczalniaFilmow4\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\109\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\109\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

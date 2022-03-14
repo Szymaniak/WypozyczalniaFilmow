@@ -5805,11 +5805,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\109\\Source\\Repos\\WypozyczalniaFilmow3\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa.csproj",
+      "projectUniqueName": "C:\\Users\\109\\Source\\Repos\\WypozyczalniaFilmow4\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa.csproj",
       "projectName": "WypozyczalniaFilmowa",
-      "projectPath": "C:\\Users\\109\\Source\\Repos\\WypozyczalniaFilmow3\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa.csproj",
+      "projectPath": "C:\\Users\\109\\Source\\Repos\\WypozyczalniaFilmow4\\WypozyczalniaFilmowa\\WypozyczalniaFilmowa.csproj",
       "packagesPath": "C:\\Users\\109\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\109\\Source\\Repos\\WypozyczalniaFilmow3\\WypozyczalniaFilmowa\\obj\\",
+      "outputPath": "C:\\Users\\109\\Source\\Repos\\WypozyczalniaFilmow4\\WypozyczalniaFilmowa\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
