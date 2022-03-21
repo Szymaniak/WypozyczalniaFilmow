@@ -1,5 +1,45 @@
-﻿@model IEnumerable<WypozyczalniaFilmowa.Models.Film>
+﻿@model FilmyKategorie
 @{
+    Layout = "_layout";
+    ViewData["Title"] = "lista filmów";
+}
+<head>
+    <link href ="~/css/site.css" rel="stylesheet"/>
+</head>
+<hl>
+    Top 3 najnowsze filmy
+</hl>
+<table>
+    <tr>
+        @foreach(var film in Model.FilmyNajnowsze)
+            {
+                <td>
+                    <h6>
+                        @film.Tytul
+                        <p>
+                            @film.Opis
+                        </p>
+                    </h6>
+                </td>
+            }
+    </tr>
+</table>
+<hl>
+    Top 3 najdłuższe filmy
+</hl>
+<table>
+    <tr>
+        @foreach (var film in Model.FilmyNajdluzsze)
+        {
+            <td>
+                <h6>
+                    @film.Tytul - @film.DlugoscFilmu min|
+                    
+                </h6>
+            </td>
+        }
+    </tr>
+</table>
     <table>
         <thead>
             <tr>
@@ -7,10 +47,11 @@
                 <th>Reżyser</th>
                 <th>Data dodania</th>
                 <th>Cena</th>
+                <th>Długość</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var film in Model)
+            @foreach (var film in Model.FilmyKategoria)
             {
             <tr>
                 <td>@film.Tytul</td>
@@ -20,8 +61,11 @@
                 <td>@film.DataDodania.ToString()</td>
 
                 <td>@film.Cena</td>
+
+                <td>@film.DlugoscFilmu</td>
+                <td><a href="@Url.Action("Szczegoly","Filmy", new {idFilmu = film.Id})">Szczegóły</a></td>
             </tr>
             }
         </tbody>
     </table>
-}
+

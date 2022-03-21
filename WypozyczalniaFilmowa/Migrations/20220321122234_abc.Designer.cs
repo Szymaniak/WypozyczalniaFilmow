@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WypozyczalniaFilmowa.DAL;
 
 namespace WypozyczalniaFilmowa.Migrations
 {
     [DbContext(typeof(FilmyContext))]
-    partial class FilmyContextModelSnapshot : ModelSnapshot
+    [Migration("20220321122234_abc")]
+    partial class abc
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,7 +74,7 @@ namespace WypozyczalniaFilmowa.Migrations
                             Id = 2,
                             Cena = 14m,
                             DataDodania = new DateTime(2021, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DlugoscFilmu = 109,
+                            DlugoscFilmu = 120,
                             KategoriaId = 3,
                             Opis = "Mężczyzna dostaje obsesji na punkcie książki, która według niego opisuje i przewiduje jego życie i przyszłość.",
                             Rezyser = "Joel Schumacher",
@@ -83,7 +85,7 @@ namespace WypozyczalniaFilmowa.Migrations
                             Id = 3,
                             Cena = 12m,
                             DataDodania = new DateTime(2020, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DlugoscFilmu = 106,
+                            DlugoscFilmu = 120,
                             KategoriaId = 3,
                             Opis = "Uznany pisarz przenosi się na prowincję, by w spokoju tworzyć kolejne książki. Wkrótce odwiedzi go tajemniczy mężczyzna, który oskarży Raineya o plagiat.",
                             Rezyser = "David Koepp",
@@ -94,7 +96,7 @@ namespace WypozyczalniaFilmowa.Migrations
                             Id = 4,
                             Cena = 20m,
                             DataDodania = new DateTime(2020, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DlugoscFilmu = 117,
+                            DlugoscFilmu = 120,
                             KategoriaId = 5,
                             Opis = "Podróż hobbita z Shire i jego ośmiu towarzyszy, której celem jest zniszczenie potężnego pierścienia pożądanego przez Czarnego Władcę - Saurona.",
                             Rezyser = "Peter Jackson",
@@ -105,7 +107,7 @@ namespace WypozyczalniaFilmowa.Migrations
                             Id = 5,
                             Cena = 11m,
                             DataDodania = new DateTime(2020, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DlugoscFilmu = 112,
+                            DlugoscFilmu = 120,
                             KategoriaId = 4,
                             Opis = "Emerytowani agenci specjalni CIA zostają wrobieni w zamach. By się ratować, muszą reaktywować stary zespół.",
                             Rezyser = "Robert Schwentke",
@@ -116,7 +118,7 @@ namespace WypozyczalniaFilmowa.Migrations
                             Id = 6,
                             Cena = 0m,
                             DataDodania = new DateTime(2021, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DlugoscFilmu = 100,
+                            DlugoscFilmu = 120,
                             KategoriaId = 2,
                             Opis = "Dziennikarz śledczy rozmawia z dziewięcioma księżmi katolickimi, którzy dopuścili się zbrodni pedofilii i molestowania nieletnich, a także ich ofiarami.",
                             Rezyser = "Tomasz Sekielski",
@@ -127,7 +129,7 @@ namespace WypozyczalniaFilmowa.Migrations
                             Id = 7,
                             Cena = 13m,
                             DataDodania = new DateTime(2020, 5, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DlugoscFilmu = 126,
+                            DlugoscFilmu = 120,
                             KategoriaId = 5,
                             Opis = "Wiedeń u progu XX w. Syn rzemieślnika, iluzjonista Eisenheim, wykorzystuje niezwykłe umiejętności, by zdobyć miłość arystokratki, narzeczonej austro-węgierskiego księcia.",
                             Rezyser = "Neil Burger",
@@ -138,7 +140,7 @@ namespace WypozyczalniaFilmowa.Migrations
                             Id = 8,
                             Cena = 15m,
                             DataDodania = new DateTime(2021, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DlugoscFilmu = 122,
+                            DlugoscFilmu = 120,
                             KategoriaId = 3,
                             Opis = "Grupa osób budzi się w pełnym śmiertelnych pułapek sześcianie. Nieznajomi muszą zacząć współpracować ze sobą, by przeżyć.",
                             Rezyser = "Vincenzo Natali",
@@ -149,7 +151,7 @@ namespace WypozyczalniaFilmowa.Migrations
                             Id = 9,
                             Cena = 16m,
                             DataDodania = new DateTime(2020, 6, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DlugoscFilmu = 110,
+                            DlugoscFilmu = 120,
                             KategoriaId = 1,
                             Opis = "Frank Cotton nabywa tajemniczą kostkę, za pomocą której można przywołać demony z piekła.",
                             Rezyser = "Clive Barker",
@@ -160,7 +162,7 @@ namespace WypozyczalniaFilmowa.Migrations
                             Id = 10,
                             Cena = 17m,
                             DataDodania = new DateTime(2020, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DlugoscFilmu = 130,
+                            DlugoscFilmu = 120,
                             KategoriaId = 3,
                             Opis = "Seryjny morderca i inteligentna agentka łączą siły, by znaleźć przestępcę obdzierającego ze skóry swoje ofiary.",
                             Rezyser = "Jonathan Demme",
