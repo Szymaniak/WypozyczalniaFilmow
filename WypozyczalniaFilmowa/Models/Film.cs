@@ -22,6 +22,7 @@ namespace WypozyczalniaFilmowa.Models
 
 
         public decimal Cena { get; set; }
+        public string Plakat { get; set; }
 
         public DateTime DataDodania { get; set;  }
 

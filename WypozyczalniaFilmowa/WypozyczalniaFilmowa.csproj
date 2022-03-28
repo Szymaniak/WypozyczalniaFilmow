@@ -13,4 +13,21 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\plakaty\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\plakaty\cube.jpg" />
+    <None Include="wwwroot\plakaty\hellriser.jpg" />
+    <None Include="wwwroot\plakaty\iluzjonista.jpg" />
+    <None Include="wwwroot\plakaty\milczenie-owiec.jpg" />
+    <None Include="wwwroot\plakaty\numer-23.jpg" />
+    <None Include="wwwroot\plakaty\red.jpg" />
+    <None Include="wwwroot\plakaty\sekretne-okno.jpg" />
+    <None Include="wwwroot\plakaty\teksanska-masakra-pila-mechaniczna.jpg" />
+    <None Include="wwwroot\plakaty\tylko-nie-mow-nikomu.jpg" />
+    <None Include="wwwroot\plakaty\wladca-pierscieni-druzyna-pierscienia.jpg" />
+  </ItemGroup>
+
 </Project>

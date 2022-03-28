@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WypozyczalniaFilmowa.DAL;
 
 namespace WypozyczalniaFilmowa.Migrations
 {
     [DbContext(typeof(FilmyContext))]
-    partial class FilmyContextModelSnapshot : ModelSnapshot
+    [Migration("20220328110835_plakaty")]
+    partial class plakaty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,7 +69,6 @@ namespace WypozyczalniaFilmowa.Migrations
                             DlugoscFilmu = 120,
                             KategoriaId = 1,
                             Opis = "20 sierpnia 1973 roku teksańska policja trafiła do stojącego na uboczu domu Thomasa Hewitta - byłego pracownika lokalnej rzeźni. Na miejscu odkryli rozkładające się zwłoki 33 osób, które zostały zamordowane przez psychopatycznego zabójcę noszącego na twarzy maskę z ludzkiej skóry i posługującego się piłą mechaniczną.",
-                            Plakat = "teksanska-masakra-pila-mechaniczna.jpg",
                             Rezyser = "Marcus Nispel",
                             Tytul = "Teksańska Masakra Piłą Mechaniczną"
                         },
@@ -79,7 +80,6 @@ namespace WypozyczalniaFilmowa.Migrations
                             DlugoscFilmu = 109,
                             KategoriaId = 3,
                             Opis = "Mężczyzna dostaje obsesji na punkcie książki, która według niego opisuje i przewiduje jego życie i przyszłość.",
-                            Plakat = "numer-23.jpg",
                             Rezyser = "Joel Schumacher",
                             Tytul = "Numer 23"
                         },
@@ -91,7 +91,6 @@ namespace WypozyczalniaFilmowa.Migrations
                             DlugoscFilmu = 106,
                             KategoriaId = 3,
                             Opis = "Uznany pisarz przenosi się na prowincję, by w spokoju tworzyć kolejne książki. Wkrótce odwiedzi go tajemniczy mężczyzna, który oskarży Raineya o plagiat.",
-                            Plakat = "sekretne-okno.jpg",
                             Rezyser = "David Koepp",
                             Tytul = "Sekretne Okno"
                         },
@@ -103,7 +102,6 @@ namespace WypozyczalniaFilmowa.Migrations
                             DlugoscFilmu = 117,
                             KategoriaId = 5,
                             Opis = "Podróż hobbita z Shire i jego ośmiu towarzyszy, której celem jest zniszczenie potężnego pierścienia pożądanego przez Czarnego Władcę - Saurona.",
-                            Plakat = "wladca-pierscieni-druzyna-pierscienia.jpg",
                             Rezyser = "Peter Jackson",
                             Tytul = "Władca Pierścieni: Drużyna Pierścienia"
                         },
@@ -115,7 +113,6 @@ namespace WypozyczalniaFilmowa.Migrations
                             DlugoscFilmu = 112,
                             KategoriaId = 4,
                             Opis = "Emerytowani agenci specjalni CIA zostają wrobieni w zamach. By się ratować, muszą reaktywować stary zespół.",
-                            Plakat = "red.jpg",
                             Rezyser = "Robert Schwentke",
                             Tytul = "Red"
                         },
@@ -127,7 +124,6 @@ namespace WypozyczalniaFilmowa.Migrations
                             DlugoscFilmu = 100,
                             KategoriaId = 2,
                             Opis = "Dziennikarz śledczy rozmawia z dziewięcioma księżmi katolickimi, którzy dopuścili się zbrodni pedofilii i molestowania nieletnich, a także ich ofiarami.",
-                            Plakat = "tylko-nie-mow-nikomu.jpg",
                             Rezyser = "Tomasz Sekielski",
                             Tytul = "Tylko nie mów nikomu"
                         },
@@ -139,7 +135,6 @@ namespace WypozyczalniaFilmowa.Migrations
                             DlugoscFilmu = 126,
                             KategoriaId = 5,
                             Opis = "Wiedeń u progu XX w. Syn rzemieślnika, iluzjonista Eisenheim, wykorzystuje niezwykłe umiejętności, by zdobyć miłość arystokratki, narzeczonej austro-węgierskiego księcia.",
-                            Plakat = "iluzjonista.jpg",
                             Rezyser = "Neil Burger",
                             Tytul = "Iluzjonista"
                         },
@@ -151,7 +146,6 @@ namespace WypozyczalniaFilmowa.Migrations
                             DlugoscFilmu = 122,
                             KategoriaId = 3,
                             Opis = "Grupa osób budzi się w pełnym śmiertelnych pułapek sześcianie. Nieznajomi muszą zacząć współpracować ze sobą, by przeżyć.",
-                            Plakat = "cube.jpg",
                             Rezyser = "Vincenzo Natali",
                             Tytul = "Cube"
                         },
@@ -163,7 +157,6 @@ namespace WypozyczalniaFilmowa.Migrations
                             DlugoscFilmu = 110,
                             KategoriaId = 1,
                             Opis = "Frank Cotton nabywa tajemniczą kostkę, za pomocą której można przywołać demony z piekła.",
-                            Plakat = "hellriser.jpg",
                             Rezyser = "Clive Barker",
                             Tytul = "Hellraiser: Wysłannik Piekieł"
                         },
@@ -175,7 +168,6 @@ namespace WypozyczalniaFilmowa.Migrations
                             DlugoscFilmu = 130,
                             KategoriaId = 3,
                             Opis = "Seryjny morderca i inteligentna agentka łączą siły, by znaleźć przestępcę obdzierającego ze skóry swoje ofiary.",
-                            Plakat = "milczenie-owiec.jpg",
                             Rezyser = "Jonathan Demme",
                             Tytul = "Milczenie Owiec"
                         });
