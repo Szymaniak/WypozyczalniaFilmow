@@ -1,5 +1,6 @@
 ﻿@model Film
 <link href="~/css/site.css" rel="stylesheet" />
+<button onclick="window.location.href ='@Url.Action("EdytujFilm","Filmy", new {id=Model.Id})'">Edytuj</button>
 <table>
     <tr>
         <td>
@@ -16,7 +17,9 @@
                 <li>
                     @Model.Opis
                 </li>
-
+                <li>
+                    @Model.DataDodania
+                </li>
                 <li>
                     @Model.Cena
                 </li>
