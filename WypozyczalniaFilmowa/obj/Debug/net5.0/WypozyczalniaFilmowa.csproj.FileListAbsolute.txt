@@ -229,3 +229,4 @@ C:\Users\109\Source\Repos\WypozyczalniaFilmow4\WypozyczalniaFilmowa\obj\Debug\ne
 C:\Users\109\Source\Repos\WypozyczalniaFilmow4\WypozyczalniaFilmowa\obj\Debug\net5.0\Razor\Views\Filmy\DodajFilm.cshtml.g.cs
 C:\Users\109\Source\Repos\WypozyczalniaFilmow4\WypozyczalniaFilmowa\obj\Debug\net5.0\Razor\Views\Filmy\Szukaj.cshtml.g.cs
 C:\Users\109\Source\Repos\WypozyczalniaFilmow4\WypozyczalniaFilmowa\obj\Debug\net5.0\Razor\Views\Filmy\EdytujFilm.cshtml.g.cs
+C:\Users\109\Source\Repos\WypozyczalniaFilmow4\WypozyczalniaFilmowa\obj\Debug\net5.0\Razor\Views\Koszyk\Index.cshtml.g.cs
