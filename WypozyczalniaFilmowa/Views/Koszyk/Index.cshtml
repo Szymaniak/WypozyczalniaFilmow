@@ -12,13 +12,41 @@
     </tr>
     @foreach(var film in ViewBag.cart)
             {
-<tr>
+<tr id="cartItem-@film.Film.Id">
     <td>@film.Film.Tytul</td>
-    <td>@film.Ilosc</td>
+    <td><span id="itemQuantity-@film.Film.Id">@film.Ilosc</span></td>
     <td>@film.Film.Tytul zł</td>
-    <td><a href="@Url.Action("Usun","Koszyk", new { id = film.Film.Id })">Usuń</a></td>
+    <td><a href="#" class="trash" data-id="@film.Film.Id">&#10060;</a></td>
     <td><a href="@Url.Action("Kup", "Koszyk", new { id = film.Film.Id })">&#128722;</a></td>
 </tr>
             }
 </table>
-Razem: @ViewBag.total zł
+<div id="totalPrice">
+    Razem: @ViewBag.total zł
+
+</div>
+
+
+@section Scripts{ 
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    $(".trash").click(function () {
+        var idCartItem = $(this).data('id');
+        if (idCartItem != '') {
+            $.post("/Koszyk/Usun", { "id": idCartItem },
+                function (response) {
+                    if (response.itemQuantity == 0) {
+                        $("#cartItem-" + response.itemId).fadeOut("slow");
+                    }
+                    else {
+                        $("#itemQuantity-" + response.itemId).text
+                            (response.itemQuantity);
+                    }
+                    $("#totalPrice").text("Razem: " + response.cartValue + 
+                        "zł")
+
+                });
+        }
+    });
+</script>
+}

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WypozyczalniaFilmowa.DAL;
 using WypozyczalniaFilmowa.Helpers;
+using WypozyczalniaFilmowa.Infrastructure;
 using WypozyczalniaFilmowa.Models;
 
 namespace WypozyczalniaFilmowa.Controllers
@@ -22,25 +23,25 @@ namespace WypozyczalniaFilmowa.Controllers
         public IActionResult Index()
         {
 
-            var cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "koszyk");
+            var cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, Consts.CartSessionKey);
             ViewBag.cart = cart;
-            ViewBag.total = cart.Sum(item => item.Film.Cena * item.Ilosc);
+            ViewBag.total = CartManager.GetCartValue(HttpContext.Session);
             return View();
         }
 
         public IActionResult Kup(int id)
         {
             var film = db.Filmy.Find(id);
-            if (SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "koszyk") == null)
+            if (SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, Consts.CartSessionKey) == null)
             {
                 List<CartItem> cart = new List<CartItem>();
                 cart.Add(new CartItem { Film = film, Ilosc = 1, Wartosc = film.Cena });
-                SessionHelper.SetObjectAsJson(HttpContext.Session, "koszyk", cart);
+                SessionHelper.SetObjectAsJson(HttpContext.Session, Consts.CartSessionKey, cart);
 
             }
             else
             {
-                List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "koszyk");
+                List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, Consts.CartSessionKey);
                 int index = InCart(id);
                 if(index != -1)
                 {
@@ -51,19 +52,30 @@ namespace WypozyczalniaFilmowa.Controllers
                     cart.Add(new CartItem { Film = film, Ilosc = 1, Wartosc = film.Cena });
 
                 }
-                SessionHelper.SetObjectAsJson(HttpContext.Session, "koszyk", cart);
+                SessionHelper.SetObjectAsJson(HttpContext.Session, Consts.CartSessionKey, cart);
 
             }
             return RedirectToAction("Index");
         }
         public IActionResult Usun(int id)
         {
-            List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "koszyk");
-            int index = InCart(id);
-            cart.RemoveAt(index);
-            SessionHelper.SetObjectAsJson(HttpContext.Session, "koszyk", cart);
-            return RedirectToAction("Index");
+            ////List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "koszyk");
+            ////int index = InCart(id);
+            ////cart.RemoveAt(index);
+            ////SessionHelper.SetObjectAsJson(HttpContext.Session, Consts.CartSessionKey, cart);
+            ////return RedirectToAction("Index");
 
+            var model = new UsuwanieViewModel()
+            {
+                ItemId = id,
+                ItemQuantity = CartManager.RemoveFromCart(
+                    HttpContext.Session, id),
+                CartValue = CartManager.GetCartValue(
+                    HttpContext.Session),
+                CartQuantityTotal = CartManager.GetCartQuantity(HttpContext.Session)
+            };
+
+            return Json(model);
         }
         private int InCart(int id)
         {

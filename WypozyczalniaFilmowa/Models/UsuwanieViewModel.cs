@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WypozyczalniaFilmowa.Models
+{
+    public class UsuwanieViewModel
+    { 
+        public  int ItemId { get; set; }
+        public  int ItemQuantity { get; set; }
+        
+        public  decimal CartValue { get; set; }
+
+        public int CartQuantityTotal { get; set; }
+
+    }
+}
