@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WypozyczalniaFilmowa.DAL;
+using WypozyczalniaFilmowa.Models;
 
 namespace WypozyczalniaFilmowa
 {
@@ -25,9 +26,17 @@ namespace WypozyczalniaFilmowa
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddIdentity<AppUser, AppRole>(options =>
+            {
+                options.User.RequireUniqueEmail = true;
 
-            
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 4;
+            }).AddEntityFrameworkStores<IdentityAppContext>();
+
+
+            services.AddControllersWithViews();
             services.AddDbContext<FilmyContext>(options => options.UseSqlServer(Configuration.GetConnectionString("filmyCS")));
             services.AddSession();
         }
@@ -51,7 +60,7 @@ namespace WypozyczalniaFilmowa
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

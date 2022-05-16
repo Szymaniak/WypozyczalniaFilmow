@@ -23,7 +23,7 @@ namespace WypozyczalniaFilmowa.Controllers
         public IActionResult Index()
         {
 
-            var cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, Consts.CartSessionKey);
+            var cart = CartManager.GetItem(HttpContext.Session);
             ViewBag.cart = cart;
             ViewBag.total = CartManager.GetCartValue(HttpContext.Session);
             return View();
@@ -31,30 +31,31 @@ namespace WypozyczalniaFilmowa.Controllers
 
         public IActionResult Kup(int id)
         {
-            var film = db.Filmy.Find(id);
-            if (SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, Consts.CartSessionKey) == null)
-            {
-                List<CartItem> cart = new List<CartItem>();
-                cart.Add(new CartItem { Film = film, Ilosc = 1, Wartosc = film.Cena });
-                SessionHelper.SetObjectAsJson(HttpContext.Session, Consts.CartSessionKey, cart);
+            CartManager.AddToCart(HttpContext.Session, db, id);
+            //var film = db.Filmy.Find(id);
+            //if (SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, Consts.CartSessionKey) == null)
+            //{
+            //    List<CartItem> cart = new List<CartItem>();
+            //    cart.Add(new CartItem { Film = film, Ilosc = 1, Wartosc = film.Cena });
+            //    SessionHelper.SetObjectAsJson(HttpContext.Session, Consts.CartSessionKey, cart);
 
-            }
-            else
-            {
-                List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, Consts.CartSessionKey);
-                int index = InCart(id);
-                if(index != -1)
-                {
-                    cart[index].Ilosc++;
-                }
-                else
-                {
-                    cart.Add(new CartItem { Film = film, Ilosc = 1, Wartosc = film.Cena });
+            //}
+            //else
+            //{
+            //    List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, Consts.CartSessionKey);
+            //    int index = InCart(id);
+            //    if(index != -1)
+            //    {
+            //        cart[index].Ilosc++;
+            //    }
+            //    else
+            //    {
+            //        cart.Add(new CartItem { Film = film, Ilosc = 1, Wartosc = film.Cena });
 
-                }
-                SessionHelper.SetObjectAsJson(HttpContext.Session, Consts.CartSessionKey, cart);
+            //    }
+            //    SessionHelper.SetObjectAsJson(HttpContext.Session, Consts.CartSessionKey, cart);
 
-            }
+            //}
             return RedirectToAction("Index");
         }
         public IActionResult Usun(int id)
@@ -79,7 +80,7 @@ namespace WypozyczalniaFilmowa.Controllers
         }
         private int InCart(int id)
         {
-            List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, "koszyk");
+            List<CartItem> cart = SessionHelper.GetObjectFromJson<List<CartItem>>(HttpContext.Session, Consts.CartSessionKey);
             for(int i  = 0; i < cart.Count(); i++)
             {
                 if (cart[i].Film.Id.Equals(id))

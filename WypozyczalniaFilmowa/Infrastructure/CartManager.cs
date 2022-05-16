@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WypozyczalniaFilmowa.DAL;
 using WypozyczalniaFilmowa.Helpers;
 using WypozyczalniaFilmowa.Models;
 
@@ -48,7 +49,7 @@ namespace WypozyczalniaFilmowa.Infrastructure
             return cart.Sum(i => i.Ilosc);
         }
 
-        private static List<CartItem> GetItem(ISession session)
+        public static List<CartItem> GetItem(ISession session)
         {
             var cart = SessionHelper.GetObjectFromJson<List<CartItem>>(
                 session, Consts.CartSessionKey);
@@ -60,6 +61,36 @@ namespace WypozyczalniaFilmowa.Infrastructure
 
             return cart;
 
+        }
+        public static void AddToCart(ISession session, FilmyContext db, int filmId)
+        {
+            var cart = GetItem(session);
+            var thisFilm = cart.Find(f => f.Film.Id == filmId);
+            
+            if(thisFilm !=null)
+            {
+                thisFilm.Ilosc++;
+            }
+            else
+            {
+                var newCartItem = db.Filmy.Where(f => f.Id == filmId).SingleOrDefault();
+
+                if(newCartItem != null)
+                {
+                    var cartItem = new CartItem
+                    {
+                        Film = newCartItem,
+                        Ilosc = 1,
+                        Wartosc = newCartItem.Cena
+
+                    };
+
+                    cart.Add(cartItem);
+
+                }
+            }
+
+            SessionHelper.SetObjectAsJson(session, Consts.CartSessionKey, cart);
         }
     }
 }
